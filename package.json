@@ -112,6 +112,8 @@
   "scripts": {
     "test": "gulp test",
 
+    "preinstall": "npm install -g typings",
+
     "update-webdriver": "node node_modules/protractor/bin/webdriver-manager update",
 
     "start": "node server"
