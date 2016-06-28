@@ -312,6 +312,34 @@ angular.module('brianleeApp').config(function ($stateProvider) {
 
 'use strict';
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+(function () {
+  var ProjectsComponent = function ProjectsComponent() {
+    _classCallCheck(this, ProjectsComponent);
+
+    this.message = 'Hello';
+  };
+
+  angular.module('brianleeApp').component('projects', {
+    templateUrl: 'app/projects/projects.html',
+    controller: ProjectsComponent
+  });
+})();
+//# sourceMappingURL=projects.controller.js.map
+
+'use strict';
+
+angular.module('brianleeApp').config(function ($stateProvider) {
+  $stateProvider.state('projects', {
+    url: '/projects',
+    template: '<projects></projects>'
+  });
+});
+//# sourceMappingURL=projects.js.map
+
+'use strict';
+
 (function () {
 
   function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
@@ -841,7 +869,8 @@ angular.module('brianleeApp').directive('oauthButtons', function () {
 //# sourceMappingURL=util.service.js.map
 
 angular.module("brianleeApp").run(["$templateCache", function($templateCache) {$templateCache.put("app/admin/admin.html","<div class=\"container\">\n  <p>The delete user and user index api routes are restricted to users with the \'admin\' role.</p>\n  <ul class=\"list-group user-list\">\n    <li class=\"list-group-item\" ng-repeat=\"user in admin.users\">\n	    <div class=\"user-info\">\n	        <strong>{{user.name}}</strong><br>\n	        <span class=\"text-muted\">{{user.email}}</span>\n	    </div>\n        <a ng-click=\"admin.delete(user)\" class=\"trash\"><span class=\"fa fa-trash fa-2x\"></span></a>\n    </li>\n  </ul>\n</div>\n");
-$templateCache.put("app/main/main.html","<header class=\"hero-unit\" id=\"banner\">\n  <div class=\"container\">\n    <h1>\'Allo, \'Allo!</h1>\n    <p class=\"lead\">KThis site is not intended to be a \"hire me\" portfolio of awesomeness. It\'s mainly a digital space for me to try and build things with different tools for web and mobile apps.</p>\n    <img src=\"assets/images/yeoman-462ccecbb1.png\" alt=\"I\'m Yeoman\">\n  </div>\n</header>\n\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-lg-12\">\n      <h1 class=\"page-header\">Features:</h1>\n      <ul class=\"nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6\" ng-repeat=\"thing in $ctrl.awesomeThings\">\n        <li><a href=\"#\" uib-tooltip=\"{{thing.info}}\">{{thing.name}}</a></li>\n      </ul>\n    </div>\n  </div>\n</div>\n");
+$templateCache.put("app/main/main.html","<header class=\"hero-unit\" id=\"banner\">\n  <div class=\"container\">\n    <h1>\'Allo, \'Allo!</h1>\n    <p class=\"lead\">This site is not intended to be a \"hire me\" portfolio of awesomeness. It\'s mainly a digital space for me to try and build things with different tools for web and mobile apps.</p>\n    <img src=\"assets/images/yeoman-462ccecbb1.png\" alt=\"I\'m Yeoman\">\n  </div>\n</header>\n\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-lg-12\">\n      <h1 class=\"page-header\">Features:</h1>\n      <ul class=\"nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6\" ng-repeat=\"thing in $ctrl.awesomeThings\">\n        <li><a href=\"#\" uib-tooltip=\"{{thing.info}}\">{{thing.name}}</a></li>\n      </ul>\n    </div>\n  </div>\n</div>\n");
+$templateCache.put("app/projects/projects.html","<div>This is the projects view.</div>\r\n");
 $templateCache.put("components/footer/footer.html","<div class=\"container\">\n  <p>Angular Fullstack v3.7.6 |\n    <a href=\"https://twitter.com/tyhenkel\">@tyhenkel</a> |\n    <a href=\"https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open\">Issues</a>\n  </p>\n</div>\n");
 $templateCache.put("components/modal/modal.html","<div class=\"modal-header\">\n  <button ng-if=\"modal.dismissable\" type=\"button\" ng-click=\"$dismiss()\" class=\"close\">&times;</button>\n  <h4 ng-if=\"modal.title\" ng-bind=\"modal.title\" class=\"modal-title\"></h4>\n</div>\n<div class=\"modal-body\">\n  <p ng-if=\"modal.text\" ng-bind=\"modal.text\"></p>\n  <div ng-if=\"modal.html\" ng-bind-html=\"modal.html\"></div>\n</div>\n<div class=\"modal-footer\">\n  <button ng-repeat=\"button in modal.buttons\" ng-class=\"button.classes\" ng-click=\"button.click($event)\" ng-bind=\"button.text\" class=\"btn\"></button>\n</div>\n");
 $templateCache.put("components/navbar/navbar.html","<div class=\"navbar navbar-default navbar-static-top\" ng-controller=\"NavbarController\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button class=\"navbar-toggle\" type=\"button\" ng-click=\"nav.isCollapsed = !nav.isCollapsed\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a href=\"/\" class=\"navbar-brand\">brianlee</a>\n    </div>\n    <div uib-collapse=\"nav.isCollapsed\" class=\"navbar-collapse collapse\" id=\"navbar-main\">\n      <ul class=\"nav navbar-nav\">\n        <li ng-repeat=\"item in nav.menu\" ui-sref-active=\"active\">\n            <a ui-sref=\"{{item.state}}\">{{item.title}}</a>\n        </li>\n        <li ng-show=\"nav.isAdmin()\" ui-sref-active=\"active\"><a ui-sref=\"admin\">Admin</a></li>\n      </ul>\n\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li ng-hide=\"nav.isLoggedIn()\" ui-sref-active=\"active\"><a ui-sref=\"signup\">Sign up</a></li>\n        <li ng-hide=\"nav.isLoggedIn()\" ui-sref-active=\"active\"><a ui-sref=\"login\">Login</a></li>\n        <li ng-show=\"nav.isLoggedIn()\"><p class=\"navbar-text\">Hello {{ nav.getCurrentUser().name }}</p> </li>\n        <li ng-show=\"nav.isLoggedIn()\" ui-sref-active=\"active\"><a ui-sref=\"settings\"><span class=\"glyphicon glyphicon-cog\"></span></a></li>\n        <li ng-show=\"nav.isLoggedIn()\"><a ui-sref=\"logout\">Logout</a></li>\n      </ul>\n    </div>\n  </div>\n</div>\n");
