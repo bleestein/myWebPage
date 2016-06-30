@@ -26,6 +26,34 @@ angular.module('brianleeApp.util', []);
 
 'use strict';
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+(function () {
+  var AboutComponent = function AboutComponent() {
+    _classCallCheck(this, AboutComponent);
+
+    this.message = 'Hello';
+  };
+
+  angular.module('brianleeApp').component('about', {
+    templateUrl: 'app/about/about.html',
+    controller: AboutComponent
+  });
+})();
+//# sourceMappingURL=about.controller.js.map
+
+'use strict';
+
+angular.module('brianleeApp').config(function ($stateProvider) {
+  $stateProvider.state('about', {
+    url: '/about',
+    template: '<about></about>'
+  });
+});
+//# sourceMappingURL=about.js.map
+
+'use strict';
+
 angular.module('brianleeApp').config(function ($stateProvider) {
   $stateProvider.state('login', {
     url: '/login',
@@ -248,6 +276,62 @@ angular.module('brianleeApp.admin').config(function ($stateProvider) {
 	});
 })(angular);
 //# sourceMappingURL=app.constant.js.map
+
+'use strict';
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+(function () {
+  var ContactComponent = function ContactComponent() {
+    _classCallCheck(this, ContactComponent);
+
+    this.message = 'Hello';
+  };
+
+  angular.module('brianleeApp').component('contact', {
+    templateUrl: 'app/contact/contact.html',
+    controller: ContactComponent
+  });
+})();
+//# sourceMappingURL=contact.controller.js.map
+
+'use strict';
+
+angular.module('brianleeApp').config(function ($stateProvider) {
+  $stateProvider.state('contact', {
+    url: '/contact',
+    template: '<contact></contact>'
+  });
+});
+//# sourceMappingURL=contact.js.map
+
+'use strict';
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+(function () {
+  var InterestsComponent = function InterestsComponent() {
+    _classCallCheck(this, InterestsComponent);
+
+    this.message = 'Hello';
+  };
+
+  angular.module('brianleeApp').component('interests', {
+    templateUrl: 'app/interests/interests.html',
+    controller: InterestsComponent
+  });
+})();
+//# sourceMappingURL=interests.controller.js.map
+
+'use strict';
+
+angular.module('brianleeApp').config(function ($stateProvider) {
+  $stateProvider.state('interests', {
+    url: '/interests',
+    template: '<interests></interests>'
+  });
+});
+//# sourceMappingURL=interests.js.map
 
 'use strict';
 
@@ -868,8 +952,11 @@ angular.module('brianleeApp').directive('oauthButtons', function () {
 })();
 //# sourceMappingURL=util.service.js.map
 
-angular.module("brianleeApp").run(["$templateCache", function($templateCache) {$templateCache.put("app/admin/admin.html","<div class=\"container\">\n  <p>The delete user and user index api routes are restricted to users with the \'admin\' role.</p>\n  <ul class=\"list-group user-list\">\n    <li class=\"list-group-item\" ng-repeat=\"user in admin.users\">\n	    <div class=\"user-info\">\n	        <strong>{{user.name}}</strong><br>\n	        <span class=\"text-muted\">{{user.email}}</span>\n	    </div>\n        <a ng-click=\"admin.delete(user)\" class=\"trash\"><span class=\"fa fa-trash fa-2x\"></span></a>\n    </li>\n  </ul>\n</div>\n");
-$templateCache.put("app/main/main.html","<header class=\"hero-unit\" id=\"banner\">\n  <div class=\"jumbotron\">\n    <h1 align=\"center\">Welcome!</h1>\n  </div>\n</header>\n\n<div class=\"container\">\n  <p class=\"lead\">This site is not intended to be a \"hire me\" portfolio of awesomeness. It\'s mainly a digital space for me to try and build things with different tools for web and mobile apps.</p>\n</div>\n\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-xs-6 col-md-3\">\n      <a href=\"#\" class=\"thumbnail\">\n        <img src=\"assets/images/brian-1d6c5b5f8a.jpg\" alt=\"125x125\">\n        <div class=\"caption\">\n          <h4 align=\"center\">About</h4>\n        </div>\n      </a>\n    </div>\n    <div class=\"col-xs-6 col-md-3\">\n      <a ui-sref=\"projects\" class=\"thumbnail\">\n        <img src=\"assets/images/projects-c20c0cb22b.jpg\" alt=\"125x125\">\n        <div class=\"caption\">\n          <h4 align=\"center\">Projects</h4>\n        </div>\n\n      </a>\n    </div>\n    <div class=\"col-xs-6 col-md-3\">\n      <a href=\"#\" class=\"thumbnail\">\n        <img src=\"assets/images/int-f7b5411b9e.jpg\" alt=\"125x125\">\n        <div class=\"caption\">\n          <h4 align=\"center\">Interests</h4>\n        </div>\n      </a>\n    </div>\n    <div class=\"col-xs-6 col-md-3\">\n      <a href=\"#\" class=\"thumbnail\">\n        <img src=\"assets/images/contact-7a6ab3dedd.jpg\" alt=\"125x125\">\n        <div class=\"caption\">\n          <h4 align=\"center\">Contact</h4>\n        </div>\n      </a>\n    </div>\n  </div>\n</div>\n");
+angular.module("brianleeApp").run(["$templateCache", function($templateCache) {$templateCache.put("app/about/about.html","<div>This is the about view.</div>\r\n");
+$templateCache.put("app/admin/admin.html","<div class=\"container\">\n  <p>The delete user and user index api routes are restricted to users with the \'admin\' role.</p>\n  <ul class=\"list-group user-list\">\n    <li class=\"list-group-item\" ng-repeat=\"user in admin.users\">\n	    <div class=\"user-info\">\n	        <strong>{{user.name}}</strong><br>\n	        <span class=\"text-muted\">{{user.email}}</span>\n	    </div>\n        <a ng-click=\"admin.delete(user)\" class=\"trash\"><span class=\"fa fa-trash fa-2x\"></span></a>\n    </li>\n  </ul>\n</div>\n");
+$templateCache.put("app/contact/contact.html","<div>This is the contact view.</div>\r\n");
+$templateCache.put("app/interests/interests.html","<div>This is the interests view.</div>\r\n");
+$templateCache.put("app/main/main.html","<header class=\"hero-unit\" id=\"banner\">\n  <div class=\"jumbotron\">\n    <h1 align=\"center\">Welcome!</h1>\n  </div>\n</header>\n\n<div class=\"container\">\n  <p class=\"lead\">This site is not intended to be a \"hire me\" portfolio of awesomeness. It\'s mainly a digital space for me to try and build things with different tools for web and mobile apps.</p>\n</div>\n\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-xs-6 col-md-3\">\n      <a ui-sref=\"about\" class=\"thumbnail\">\n        <img src=\"assets/images/brian-1d6c5b5f8a.jpg\" alt=\"125x125\">\n        <div class=\"caption\">\n          <h4 align=\"center\">About</h4>\n        </div>\n      </a>\n    </div>\n    <div class=\"col-xs-6 col-md-3\">\n      <a ui-sref=\"projects\" class=\"thumbnail\">\n        <img src=\"assets/images/projects-c20c0cb22b.jpg\" alt=\"125x125\">\n        <div class=\"caption\">\n          <h4 align=\"center\">Projects</h4>\n        </div>\n\n      </a>\n    </div>\n    <div class=\"col-xs-6 col-md-3\">\n      <a ui-sref=\"interests\" class=\"thumbnail\">\n        <img src=\"assets/images/int-f7b5411b9e.jpg\" alt=\"125x125\">\n        <div class=\"caption\">\n          <h4 align=\"center\">Interests</h4>\n        </div>\n      </a>\n    </div>\n    <div class=\"col-xs-6 col-md-3\">\n      <a ui-sref=\"contact\" class=\"thumbnail\">\n        <img src=\"assets/images/contact-7a6ab3dedd.jpg\" alt=\"125x125\">\n        <div class=\"caption\">\n          <h4 align=\"center\">Contact</h4>\n        </div>\n      </a>\n    </div>\n  </div>\n</div>\n");
 $templateCache.put("app/projects/projects.html","<div>This is the projects view.</div>\r\n");
 $templateCache.put("components/footer/footer.html","<div class=\"container\">\n  <p align=\"center\">\n    <a href=\"https://twitter.com/bleestein\"><img src=\"assets/images/twitter-fac10ebe77.png\" width=\"15\" height=\"15\"></a> |\n    <a href=\"https://linkedin.com/in/bleestein\"><img src=\"assets/images/linkedin-ce0f1fd2de.png\" width=\"15\" height=\"15\"></a> |\n    <a href=\"https://github.com/bleestein\"><img src=\"assets/images/github-45a9ab590d.png\" width=\"15\" height=\"15\"></a> |\n    <a href=\"https://plus.google.com/u/0/+BrianStein2/about/p/pub\"><img src=\"assets/images/googleplus-ad6692acd6.png\" width=\"15\" height=\"15\"></a>\n  </p>\n</div>\n");
 $templateCache.put("components/modal/modal.html","<div class=\"modal-header\">\n  <button ng-if=\"modal.dismissable\" type=\"button\" ng-click=\"$dismiss()\" class=\"close\">&times;</button>\n  <h4 ng-if=\"modal.title\" ng-bind=\"modal.title\" class=\"modal-title\"></h4>\n</div>\n<div class=\"modal-body\">\n  <p ng-if=\"modal.text\" ng-bind=\"modal.text\"></p>\n  <div ng-if=\"modal.html\" ng-bind-html=\"modal.html\"></div>\n</div>\n<div class=\"modal-footer\">\n  <button ng-repeat=\"button in modal.buttons\" ng-class=\"button.classes\" ng-click=\"button.click($event)\" ng-bind=\"button.text\" class=\"btn\"></button>\n</div>\n");
