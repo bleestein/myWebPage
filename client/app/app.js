@@ -952,7 +952,7 @@ angular.module('brianleeApp').directive('oauthButtons', function () {
 })();
 //# sourceMappingURL=util.service.js.map
 
-angular.module("brianleeApp").run(["$templateCache", function($templateCache) {$templateCache.put("app/about/about.html","<div>This is the about view.</div>\r\n");
+angular.module("brianleeApp").run(["$templateCache", function($templateCache) {$templateCache.put("app/about/about.html","<div class=\"bkjumbotron\" >\n  <h1>Hello, world!</h1>\n  <p>...</p>\n  <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more</a></p>\n</div>\n");
 $templateCache.put("app/admin/admin.html","<div class=\"container\">\n  <p>The delete user and user index api routes are restricted to users with the \'admin\' role.</p>\n  <ul class=\"list-group user-list\">\n    <li class=\"list-group-item\" ng-repeat=\"user in admin.users\">\n	    <div class=\"user-info\">\n	        <strong>{{user.name}}</strong><br>\n	        <span class=\"text-muted\">{{user.email}}</span>\n	    </div>\n        <a ng-click=\"admin.delete(user)\" class=\"trash\"><span class=\"fa fa-trash fa-2x\"></span></a>\n    </li>\n  </ul>\n</div>\n");
 $templateCache.put("app/contact/contact.html","<div>This is the contact view.</div>\r\n");
 $templateCache.put("app/interests/interests.html","<div>This is the interests view.</div>\r\n");
